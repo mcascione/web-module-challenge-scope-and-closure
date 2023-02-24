@@ -89,10 +89,16 @@ Use the finalScore function below to do the following:
 }
 */ 
 
-function finalScore(/*Code Here*/){
-  /*Code Here*/
+function finalScore(callback, num){
+  const final = {Home: 0, Away: 0};
+  for (let i = 0; i < num; i++){
+    final.Home = callback(); 
+    final.Away = callback();
+  }
+  return final;
 }
 
+console.log('Task 3:', finalScore(inning, 9));
 
 /* ⚾️⚾️⚾️ Task 4: getInningScore() ⚾️⚾️⚾️
 Use the getInningScore() function below to do the following:
