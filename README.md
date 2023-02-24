@@ -61,6 +61,9 @@ You will be running your tests in one terminal and debugging in the other. As yo
 Edit the `ReadMe` file with your answers to the questions below.
 
 1. In your own words, define closure (1-2 sentences).
+
+    Closure is the act of recalling data that was stored from an external function. This data is stored in it's own lexical environment. Closure only works if the function enacting the closure is scoped within an external function. You can think of the scope layers like a rose bud. As the rose matures, each new layer of petals can access memories from older, exterior layers but cannot access memories from newer petals within the center.
+
 2. Study the following code, then answer the questions below.
 
 ```js
@@ -82,8 +85,12 @@ dansRoll();
 ```
 
 a. Where is closure used in this code? How can you tell?
+    return function(){} => this inner function uses the parameter 'name', which is defined outside of it's own function scope in function personalDice(name). 
 b. Compare and contrast calling `dansRoll` the first and second time. What is always the same? What could change?
+    The string (including name of 'Dan') will remain the same, but the random number integer inside the string could change.
 c. What is the lexical scope of `newRoll`? 
+   The random number method assigned to the variable newRoll: Math.floor(Math.random() * 6)
+    
 
 
 ### Task 3 - Stretch Goals
