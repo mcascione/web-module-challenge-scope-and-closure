@@ -113,11 +113,14 @@ For example: invoking getInningScore(inning) might return this object:
   */
 
 
-function getInningScore(/*Your Code Here */) {
-  /*Your Code Here */
-
+function getInningScore(callback) {
+  const objScores = {Home: 0, Away: 0};
+  objScores.Home = callback();
+  objScores.Away = callback();
+  return objScores;
 }
 
+console.log("Task 4:", getInningScore(inning));
 
 /* STRETCH: ⚾️⚾️⚾️ Task 5: scoreboard() ⚾️⚾️⚾️
 Use the scoreboard function below to do the following:
