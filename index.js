@@ -30,11 +30,17 @@ console.log('example task:', processFirstItem(['foo','bar'],function(str){return
   Study the code for counter1 and counter2, then answer the questions below.
   
   1. What is the difference between counter1 and counter2?
+
+    counter1 is an ongoing counter but counter2 resets each time it is called.
   
   2. Which of the two uses a closure? How can you tell?
+
+     counter1 uses closure at 'return function counter()' because it is access count within the counter function but count is defined within the scope of the exterior counterMaker function. 
   
   3. In what scenario would the counter1 code be preferable? In what scenario would 
      counter2 be better?  
+
+     If you want the counter to be reset each time the counter function is called (like the timer at the start of a new inning), you would want ot use counter2. If you want to successively increment the counter (like the overall game scoreboard), you would need to use counter1 code.
 */
 
 // counter1 code
@@ -64,10 +70,10 @@ Use the inning function below to do the following:
 NOTE: This will be a callback function for the tasks below
 */
 
-function inning(/*Code Here*/){
-    /*Code Here*/
+function inning(){
+    return Math.floor(Math.random() * 3);
 }
-
+console.log(inning());
 
 /* ⚾️⚾️⚾️ Task 3: finalScore() ⚾️⚾️⚾️
 Use the finalScore function below to do the following:
